@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>統一パーティ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action = "./getMonster.jsp" method = "get">
+            何タイプ？<br><!--種別-->
+            <input type="radio" name="タイプ" value="炎" checked="checked">炎タイプ
+            <input type="radio" name="タイプ" value="水">水タイプ
+            <input type="radio" name="タイプ" value="草">草タイプ
+            <!--個数-->
+            <br>何匹必要？常識をわきまえろよ？<br>
+            <input type="number" name="匹" max="6" min="0" step="1">匹
+            <br>いくらのやつにする？<br>
+            <!--値段-->
+            <input type="radio" name="金額" value="1000" checked="checked">1千円
+            <input type="radio" name="金額" value="2000">2千円
+            <input type="radio" name="金額" value="10000">1万円
+            <br>決まったら送れ<br>
+            <p><input type="submit" value="送る"><input type="reset" value="やっぱやめる"></p>
+            
+            
+        </form> 
+      
+    </body>
+</html>
