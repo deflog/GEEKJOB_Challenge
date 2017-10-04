@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>情報の取得</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="./getForm.jsp" method="post">
+            <label for ="name_e">氏名：<br></label>
+            <input type="text" name="txtName" placeholder="山田花子" id ="name_e">
+            <br>性別：<br>
+            <label><input type="radio" name="seibetsu" value="male" checked="checked">男</label>
+            
+            <label><input type="radio" name="seibetsu" value="female">女</label>
+            
+            <p><label for = "syumi_i"><br>趣味：<br></label></p>
+            <textarea id = "syumi_i" name="syumi" rows="4" cols="40" placeholder="ここの趣味を入力してください"></textarea><br>
+            
+            <p><input type="submit" value="送信する"></p>
+
+        </form>
+    </body>
+</html>
