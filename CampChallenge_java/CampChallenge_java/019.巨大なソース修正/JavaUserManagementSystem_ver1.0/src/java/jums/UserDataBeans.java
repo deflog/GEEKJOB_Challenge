@@ -1,5 +1,7 @@
 package jums;
 
+import java.io.Serializable;
+
 
 
 /**
@@ -8,25 +10,34 @@ package jums;
  * @version 1.00
  * @author hayashi-s
  */
-public class UserDataBeans {
-    private int userID;
+public class UserDataBeans implements Serializable{
+    //private int userID;
     private String name;
-    private String birthday;
+   // private String birthday;
     private String tell;
-    private String type;
+    private int type;
     private String comment;
-    private String newDate;
-    private String year;
-    private String month;
-    private String day;
+    //private String newDate;
+    private int year;
+    private int month;
+    private int day;
    
+     public UserDataBeans(){
+        this.name = "";
+        this.year = 0;
+        this.month = 0;
+        this.day = 0;
+        this.tell = "";
+        this.type = 0;
+        this.comment= "";
+    }
     
-    public int getUserID() {
-        return userID;
+    /* public int getUserID() {
+    return userID;
     }
     public void setUserID(int userID) {
-        this.userID = userID;
-    }
+    this.userID = userID;
+    }*/
     
     public String getName(){
         return name;
@@ -35,12 +46,12 @@ public class UserDataBeans {
         this.name = name;
     }
     
-    public String getBirthday(){
-        return birthday;
+    /*public String getBirthday(){
+    return birthday;
     }
     public void setBirthday(String birthday){
-        this.birthday = birthday;
-    }
+    this.birthday = birthday;
+    }*/
     
     public String getTell(){
         return tell;
@@ -49,11 +60,12 @@ public class UserDataBeans {
         this.tell = tell;
     }
     
-    public String getType(){
+    public int getType(){
+        
         return type;
     }
     public void setType(String type){
-        this.type = type;
+        this.type = Integer.parseInt(type);
     }
     
     public String getComment(){
@@ -63,29 +75,33 @@ public class UserDataBeans {
         this.comment = comment;
     }
     
-    public String getNewDate() {
-        return newDate;
+    /* public String getNewDate() {
+    return newDate;
     }
     public void setNewDate(String newDate) {
-        this.newDate = newDate;
-    }
-    public String getYear(){
+    this.newDate = newDate;
+    }*/
+    public int getYear(){
         return year;
     }
     public void setYear(String year){
-        this.year = year;
+        
+        this.year = Integer.parseInt(year);
     }
-    public String getMonth(){
+    public int getMonth(){
         return month;
     }
     public void setMonth(String month){
-        this.month = month;
+        
+        this.month = Integer.parseInt(month);
     }
-    public String getDay(){
+    public int getDay(){
+        
         return day;
     }
     public void setDay(String day){
-        this.day = day;
+      
+        this.day = Integer.parseInt(day);
     }
 
 }

@@ -33,6 +33,7 @@ public class InsertConfirm extends HttpServlet {
             if(accesschk ==null || (Integer)session.getAttribute("ac")!=Integer.parseInt(accesschk)){
                 throw new Exception("不正なアクセスです");
             }
+            check ce = new check();
             UserDataBeans data = new UserDataBeans();
             //フォームからの入力を取得
             String name = request.getParameter("name");
@@ -44,10 +45,10 @@ public class InsertConfirm extends HttpServlet {
             String comment = request.getParameter("comment");
             
             data.setName(name);
-            data.setYear(year);
-            data.setMonth(month);
-            data.setDay(day);
-            data.setType(type);
+            data.setYear(ce.Check(year));
+            data.setMonth(ce.Check(month));
+            data.setDay(ce.Check(day));
+            data.setType(ce.Check(type));
             data.setTell(tell);
             data.setComment(comment);
             session.setAttribute("DATA",data);
@@ -60,12 +61,12 @@ public class InsertConfirm extends HttpServlet {
             session.setAttribute("type", type);
             session.setAttribute("tell", tell);
             session.setAttribute("comment", comment);
-            if(name.equals("")||year.equals("")||month.equals("")||day.equals("")||type==null||tell.equals("")||comment.equals("")){
+            /*if(name.equals("")||year.equals("")||month.equals("")||day.equals("")||type==null||tell.equals("")||comment.equals("")){
             request.setAttribute("DATA",data);
             
             request.getRequestDispatcher("/insert.jsp").forward(request, response);
             
-            }
+            }*/
             System.out.println("Session updated!!");
             
             request.getRequestDispatcher("/insertconfirm.jsp").forward(request, response);
@@ -115,4 +116,14 @@ public class InsertConfirm extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+}
+class check{
+    String Check(String st){
+        if(st.equals("")){
+        
+            st="0";
+        }
+        return st;
+    }
+    
 }
